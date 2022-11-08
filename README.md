@@ -1,6 +1,6 @@
 # Cloud Discovery
 
-这是一个服务发现组件，它可以让你的应用快速获取`Kubernetes`上部署的服务的实例信息。
+这是一个服务发现组件，整合了`Spring Cloud`，通过注解`org.springframework.cloud.client.discovery.EnableDiscoveryClient`开启功能后，可以让你的应用快速获取`Kubernetes`上部署的服务的实例信息。
 
 # 快速开始
 
@@ -8,7 +8,7 @@
 
 ```xml
 <dependency>
-    <groupId>com.github.open</groupId>
+    <groupId>io.github.dbses</groupId>
     <artifactId>cloud-discovery-starter</artifactId>
 </dependency>
 ```
@@ -49,16 +49,27 @@ cloud:
 ### 使用样例
 
 ```java
+package com.github.open.example.service;
+
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class ExampleService implements InitializingBean {
 
     @Autowired
-    private DiscoveryClient kubernetesDiscoveryClient;
+    private DiscoveryClient discoveryClient;
 
     @Override
     public void afterPropertiesSet() {
         System.out.println("===== Cloud Discovery Example =====");
-        List<ServiceInstance> instance = kubernetesDiscoveryClient.getInstances("courier-producer");
+        List<ServiceInstance> instance = discoveryClient.getInstances("courier-producer");
         System.out.println("instance: " + instance);
         System.out.println("ip: " + instance.stream().map(ServiceInstance::getHost).collect(Collectors.toList()));
     }

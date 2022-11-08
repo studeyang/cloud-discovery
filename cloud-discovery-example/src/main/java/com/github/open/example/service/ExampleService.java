@@ -17,12 +17,12 @@ import java.util.stream.Collectors;
 public class ExampleService implements InitializingBean {
 
     @Autowired
-    private DiscoveryClient kubernetesDiscoveryClient;
+    private DiscoveryClient discoveryClient;
 
     @Override
     public void afterPropertiesSet() {
         System.out.println("===== Cloud Discovery Example =====");
-        List<ServiceInstance> instance = kubernetesDiscoveryClient.getInstances("courier-producer");
+        List<ServiceInstance> instance = discoveryClient.getInstances("courier-producer");
         System.out.println("instance: " + instance);
         System.out.println("ip: " + instance.stream().map(ServiceInstance::getHost).collect(Collectors.toList()));
     }

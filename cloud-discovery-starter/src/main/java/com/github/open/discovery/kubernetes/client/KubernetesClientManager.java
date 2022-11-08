@@ -21,8 +21,8 @@ import java.util.Map;
 public class KubernetesClientManager implements ClientManager {
 
     /**
-     * key -> namespace, 这里要求所有群集的 namespace 都不能重复<br/>
-     * 这里保证配置在前面的 namespace 优先加载
+     * <p>key - namespace, 这里要求所有群集的 namespace 都不能重复</p>
+     * <p>这里保证配置在前面的 namespace 优先加载</p>
      */
     @Getter
     protected Map<String, KubernetesClient> clientMap = Maps.newLinkedHashMap();
