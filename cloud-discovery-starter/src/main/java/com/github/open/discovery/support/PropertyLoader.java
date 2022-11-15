@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * @author <a href="mailto:yanglu_u@126.com">dbses</a>
+ * @author <a href="https://github.com/studeyang">studeyang</a>
  * @since 1.0 2022/3/22
  */
 public class PropertyLoader {

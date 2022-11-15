@@ -12,7 +12,7 @@ import java.util.Collection;
 import java.util.Map;
 
 /**
- * @author <a href="mailto:yanglu_u@126.com">dbses</a>
+ * @author <a href="https://github.com/studeyang">studeyang</a>
  * @since 1.0 2022/3/22
  * <p>
  * KubernetesClient 实例管理器，每个 namespace 对应一个 KubernetesClient

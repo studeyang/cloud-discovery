@@ -12,7 +12,7 @@ import java.util.Collections;
 import java.util.Map;
 
 /**
- * @author <a href="mailto:yanglu_u@126.com">dbses</a>
+ * @author <a href="https://github.com/studeyang">studeyang</a>
  * @since 1.0 2022/3/22
  */
 @ToString

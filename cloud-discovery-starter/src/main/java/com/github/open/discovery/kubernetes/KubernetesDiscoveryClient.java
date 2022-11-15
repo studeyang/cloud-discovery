@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
 
 /**
  * @author jian.xu
- * @author <a href="mailto:yanglu_u@126.com">dbses</a>
+ * @author <a href="https://github.com/studeyang">studeyang</a>
  */
 @Slf4j
 public class KubernetesDiscoveryClient implements DiscoveryClient {
